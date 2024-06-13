@@ -1,0 +1,147 @@
+﻿<Window x:Class="SchemeEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:SchemeEditor"
+        xmlns:control="clr-namespace:SchemeEditor.Controls"
+        mc:Ignorable="d"
+        Title="SchemeEditor" Height="450" Width="800" Icon="/Icon.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Background="Gray" Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="Gray" BorderThickness="0,0,0,1">
+            <StackPanel>
+                <Button HorizontalAlignment="Left" Content="File" Width="40" Command="{Binding FileButtonCommand}" ContextMenu="{Binding ContextMenu}"/>
+            </StackPanel>
+        </Border>
+
+        <ListBox x:Name="ToolBox" 
+                 Grid.Column="0" Grid.Row="1"
+                 Background="LightGray"
+                 HorizontalContentAlignment="Stretch"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 BorderThickness="0, 0, 1, 0"
+                 DataContext="{Binding ToolBoxVM}"
+                 ItemsSource="{Binding Controls}"
+                 SelectedItem="{Binding SelectedControl, Mode=TwoWay}">
+            
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseMove">
+                    <i:InvokeCommandAction Command="{Binding DragStartCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ContentControl Content="{Binding}"
+                                    Width="50"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            
+        </ListBox>
+        
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="1">
+            <Canvas x:Name="MainCanvas"
+                Width="2000"
+                Height="2000"
+                Background="White"
+                AllowDrop="True"
+                DataContext="{Binding CanvasVM}">
+
+                <Canvas.LayoutTransform>
+                    <ScaleTransform ScaleX="{Binding ScaleX}" ScaleY="{Binding ScaleY}"/>
+                </Canvas.LayoutTransform>
+
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="DragOver">
+                        <i:InvokeCommandAction Command="{Binding DragOverCommand}" PassEventArgsToCommand="True"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="Drop">
+                        <i:InvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=MainCanvas}"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="MouseMove">
+                        <i:InvokeCommandAction Command="{Binding MouseMoveCommand}"
+                                           PassEventArgsToCommand="True"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="MouseLeftButtonUp">
+                        <i:InvokeCommandAction Command="{Binding MouseLeftButtonUpCommand}"
+                                           PassEventArgsToCommand="True"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="PreviewMouseWheel">
+                        <i:InvokeCommandAction Command="{Binding ZoomCommand}" 
+                                           PassEventArgsToCommand="True"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
+                <ItemsControl ItemsSource="{Binding Controls}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Canvas/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="ContentPresenter">
+                            <Setter Property="Canvas.Left" Value="{Binding PositionOnCanvas.X}"/>
+                            <Setter Property="Canvas.Top" Value="{Binding PositionOnCanvas.Y}"/>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding Control}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                                        <i:InvokeCommandAction Command="{Binding MouseLeftButtonDownCommand}"
+                                                   CommandParameter="{Binding ElementName=MainCanvas}"/>
+                                    </i:EventTrigger>
+                                    <i:EventTrigger EventName="MouseRightButtonDown">
+                                        <i:InvokeCommandAction Command="{Binding MouseRightButtonDownCommand}"/>
+                                    </i:EventTrigger>
+                                    <i:EventTrigger EventName="MouseEnter">
+                                        <i:InvokeCommandAction Command="{Binding MouseEnterCommand}"/>
+                                    </i:EventTrigger>
+                                    <i:EventTrigger EventName="MouseLeave">
+                                        <i:InvokeCommandAction Command="{Binding MouseLeaveCommand}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </ContentControl>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+
+                <ItemsControl ItemsSource="{Binding Connections}">
+
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Canvas/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Path Data="{Binding Path.Data}" Stroke="Black" StrokeThickness="1"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Canvas>
+        </ScrollViewer>
+    </Grid>
+</Window>

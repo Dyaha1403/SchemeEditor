@@ -1,0 +1,33 @@
+﻿<local:BaseControl x:Class="SchemeEditor.Controls.OverloadHeater"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SchemeEditor.Controls"
+             mc:Ignorable="d" Width="10" Height="30">
+    <Grid>
+        <Rectangle Width="10" Height="30" Fill="Transparent"/>
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Width="1" Height="7.5" Fill="Black"/>
+        <Ellipse Width="9" Height="9" Fill="Transparent" Stroke="Black" StrokeThickness="1" Margin="0, 0, 0, 8">
+            <Ellipse.Clip>
+                <RectangleGeometry Rect="4.5,0,9,9"/>
+            </Ellipse.Clip>
+        </Ellipse>
+        <Ellipse Width="9" Height="9" Fill="Transparent" Stroke="Black" StrokeThickness="1" Margin="0, 0, 0, 8">
+            <Ellipse.Clip>
+                <RectangleGeometry Rect="0,4.5,4.5,9"/>
+            </Ellipse.Clip>
+        </Ellipse>
+        <Ellipse Width="9" Height="9" Fill="Transparent" Stroke="Black" StrokeThickness="1" Margin="0, 8, 0, 0">
+            <Ellipse.Clip>
+                <RectangleGeometry Rect="0,0,4.5,9"/>
+            </Ellipse.Clip>
+        </Ellipse>
+        <Ellipse Width="9" Height="9" Fill="Transparent" Stroke="Black" StrokeThickness="1" Margin="0, 8, 0, 0">
+            <Ellipse.Clip>
+                <RectangleGeometry Rect="0,0,9,4.5"/>
+            </Ellipse.Clip>
+        </Ellipse>
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="1" Height="7.5" Fill="Black"/>
+    </Grid>
+</local:BaseControl>

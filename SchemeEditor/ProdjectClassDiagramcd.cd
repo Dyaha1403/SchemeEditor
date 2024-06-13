@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SchemeEditor.Controls.BaseControl">
+    <Position X="10.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAwBAAAAAIAIIAAAAACAAQBAAAAAAAAEBAAAiCAAA=</HashCode>
+      <FileName>Controls\BaseControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeEditor.Models.CanvasItem">
+    <Position X="19" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAI0ACEACKJADQAIAQAABABABAAAAIAgAAAAACAAAQ=</HashCode>
+      <FileName>Models\CanvasItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_control" />
+      <Property Name="Control" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Connectors" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SchemeEditor.Models.Connection">
+    <Position X="19" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAICAAAAAAAAAAAAAgAAgAAAIAYAAAA=</HashCode>
+      <FileName>Models\Connection.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EndConnector" />
+      <Property Name="StartConnector" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SchemeEditor.Models.Connector">
+    <Position X="21.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAACQIAAAAAAAAAAAAAAAABAAACEAAAAAAAAAA=</HashCode>
+      <FileName>Models\Connector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeEditor.ViewModels.CanvasViewModel">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAACgASAAACCAFBIAADCgJgAAAAAAAAAgAGAIBAA=</HashCode>
+      <FileName>ViewModels\CanvasViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_draggerConnection" />
+      <Field Name="_draggerItem" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_controls" />
+      <Field Name="_connections" />
+      <Property Name="Connections" />
+      <Property Name="Controls" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SchemeEditor.ViewModels.MainViewModel">
+    <Position X="13.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAgAAAJAAAIAAAAAAAAAAAAAAAAEAAAAAAg=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CanvasVM" />
+      <Property Name="ToolBoxVM" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SchemeEditor.ViewModels.ToolBoxViewModel">
+    <Position X="10.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAACAAgAAAAAAAAAAAAAAAAkAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>ViewModels\ToolBoxViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedControl" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_controls" />
+      <Property Name="Controls" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SchemeEditor.ViewModels.ChangeShemeViewModel">
+    <Position X="13.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQBAAAACAEAKAAAAABAoAQAAAAwAIAQAAAAgAE=</HashCode>
+      <FileName>ViewModels\ChangeShemeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

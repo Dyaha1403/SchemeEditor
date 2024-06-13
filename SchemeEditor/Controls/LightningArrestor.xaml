@@ -1,0 +1,15 @@
+﻿<local:BaseControl x:Class="SchemeEditor.Controls.LightningArrestor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SchemeEditor.Controls"
+             mc:Ignorable="d" Width="20" Height="45">
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Width="1" Height="20" Fill="Black"/>
+        <Polygon Stroke="Black" StrokeThickness="1" Fill="Black"
+              Points="8,17 10,20 12,17"/>
+        <Rectangle Stroke="Black" Fill="Transparent" Width="20" Height="25"/>
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="1" Height="20" Fill="Black"/>
+    </Grid>
+</local:BaseControl>

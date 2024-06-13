@@ -1,0 +1,26 @@
+﻿<local:BaseControl x:Class="SchemeEditor.Controls.FuseImproved"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SchemeEditor.Controls"
+             mc:Ignorable="d" Width="15" Height="45">
+    <Grid>
+        <Rectangle Width="15" Height="45" Fill="Transparent"/>
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Width="1" Height="10" Fill="Black"/>
+        <Path Stroke="Black" StrokeThickness="1">
+            <Path.Data>
+                <PathGeometry>
+                    <PathGeometry.Figures>
+                        <PathFigure StartPoint="7.4,9.7">
+                            <PathFigure.Segments>
+                                <BezierSegment Point1="25,25" Point2="-10,20" Point3="7.6,35.3"/>
+                            </PathFigure.Segments>
+                        </PathFigure>
+                    </PathGeometry.Figures>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="1" Height="10" Fill="Black"/>
+    </Grid>
+</local:BaseControl>

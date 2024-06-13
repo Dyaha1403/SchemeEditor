@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Controls\CircuitBreaker.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\CircuitBreakerImproved.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\Contactor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\Disconnect.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\DrawOutCircuitBreaker.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\DrawOutCircuitBreakerImproved.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\Fuse.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\FuseImproved.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\Generator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\LightningArrestor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\Motor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\OverloadHeater.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\Transformer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ChangeSchemeWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\CircuitBreaker.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\CircuitBreakerImproved.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Contactor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Disconnect.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\DrawOutCircuitBreaker.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\DrawOutCircuitBreakerImproved.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Fuse.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\FuseImproved.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Generator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LightningArrestor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Motor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\OverloadHeater.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Transformer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ChangeSchemeWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
